@@ -1,0 +1,21 @@
+Megan Ly
+CS 341
+hw3
+
+SQL Commands:
+1. CREATE DATABASE CHEESECAKE;
+2. USE CHEESECAKE;
+3. CREATE TABLE ORDER(
+    ORDERID INT
+    MONTH CHAR(3),
+    DAY INT 
+    QUANTITY INT 
+    TOPPING ENUM("plain, "chocolate", "cherry"),
+    NOTES CHAR(512);
+4. DESCRIBE ORDERS;
+5. SELECT * FROM ORDERS;
+6. SELECT * FROM ORDER 
+    WHRE MONTH = 'FEB' AND TOPPING = "plain';
+8. INSERT INTO ORDERS   
+    VALUES (62, 'SEP', '19', '2', 'cherry', 'Enjoy your cheesecakes!');
+)

@@ -1,0 +1,54 @@
+/*Megan Ly*/
+/*CS341*/
+
+h1 {
+    background-color: rgb(109, 158, 109);
+ }
+ 
+ label {
+     font-family: 'American Typewriter', sans-serif
+ }
+ 
+ p {
+     font-family: Cursive;
+     color:rgb(255, 51, 0);
+ }
+ 
+ CheesecakeImage{
+     width: 20%;
+     height: 20%;
+     content: url(https://www.gimmesomeoven.com/wp-content/uploads/2021/02/Tarta-de-Queso-Burnt-Basque-Cheesecake-Recipe-3-1.jpg);
+ }
+ 
+ /*Dropdown button attributes*/
+ .dropbtn {
+     background-color:Black;
+     color: white;
+     padding: 10px;
+     font-size: 16px;
+     border: none;
+ }
+ .dropDown {
+     position: relative;
+     display: inline-block;
+ }
+ .dropDown-content {
+     display: none;
+     color: black;
+     height:100px;
+     width: 100px;
+     text-decoration: none;
+     overflow-y: scroll;
+ }
+ 
+ .dropDown-content a {
+     color: black;
+     padding: 6px 16px;
+     text-decoration: none;
+     display: block;
+ }
+ 
+ .dropDown-content a:hover {background-color:#ddd;}
+ .dropDown:hover .dropDown-content {display: block;}
+ .dropDown:hover .dropbtn {background-color: Green;}
+ 
