@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var usersOrder = require('./routes/orders');
 
 var app = express();
 
@@ -18,6 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//hw4 part one, adding new app.use line that will create orders.js file when responding to locallhost address
+app.use('/orders', usersOrder);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

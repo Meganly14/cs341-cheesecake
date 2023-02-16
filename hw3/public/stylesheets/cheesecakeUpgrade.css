@@ -28,11 +28,11 @@ h1 {
      font-size: 16px;
      border: none;
  }
- .dropDown {
+ .dropdown {
      position: relative;
      display: inline-block;
  }
- .dropDown-content {
+ .dropdown-content {
      display: none;
      color: black;
      height:100px;
@@ -41,14 +41,14 @@ h1 {
      overflow-y: scroll;
  }
  
- .dropDown-content a {
+ .dropdown-content a {
      color: black;
      padding: 6px 16px;
      text-decoration: none;
      display: block;
  }
  
- .dropDown-content a:hover {background-color:#ddd;}
- .dropDown:hover .dropDown-content {display: block;}
- .dropDown:hover .dropbtn {background-color: Green;}
+ .dropdown-content a:hover {background-color:#ddd;}
+ .dropdown:hover .dropdown-content {display: block;}
+ .dropdown:hover .dropbtn {background-color: Green;}
  
