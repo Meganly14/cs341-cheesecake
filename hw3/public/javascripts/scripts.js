@@ -34,31 +34,36 @@ $(".dropdown-content a").on('click', function() {
     $(month_button).text($(this).text());
 });
 
-//helper function to issue post request 
-function postOrder(month){
-    $.post("/orders", {month: month}, function(data) {
-        var orders = JSON/parseFloat(data);
-        $("#cherryOrders").text(orders[0].quantity + " " + orders[0].topping);
-        $("#chocolateOrders").text(orders[1].quantity + " " + orders[1].topping);
-        $("#plainOrders").text(orders[2].quantity + " " + orders[2].topping);
-    });
-}
 
+//helper function to update the month of the selected month by the user 
 function switchMonth(month){
-    $("dropdown").text(month);
+    $("#month_button").text(month);
     postOrder(month);
 }
 
-//update the mnonth to what the user selected from the dropdown menu 
-$('#Jan').on('click', (function(){switchMonth("Jan");}));
-$('#Feb').on('click', (function(){switchMonth("Feb");}));
-$('#Mar').on('click', (function(){switchMonth("Mar");}));
-$('#Apr').on('click', (function(){switchMonth("Apr");}));
-$('#May').on('click', (function(){switchMonth("May");}));
-$('#Jun').on('click', (function(){switchMonth("Jun");}));
-$('#Jul').on('click', (function(){switchMonth("Jul");}));
-$('#Aug').on('click', (function(){switchMonth("Aug");}));
-$('#Sep').on('click', (function(){switchMonth("Sep");}));
-$('#Oct').on('click', (function(){switchMonth("Oct");}));
-$('#Nov').on('click', (function(){switchMonth("Nov");}));
-$('#Dec').on('click', (function(){switchMonth("Dec");}));
+//helper function to issue post request 
+function postOrder(month){
+    $.post("/orders", {month: month}, function(data) {
+        var objOrders = (data['data']);
+        $("#cherryOrders").text(objOrders[0].quant + " " + objOrders[0].topping);
+        $("#chocolateOrders").text(objOrders[1].quant + " " + objOrders[1].topping);
+        $("#plainOrders").text(objOrders[2].quant + " " + objOrders[2].topping);   
+    });
+}
+
+function changeMonth(){
+   //update the mnonth to what the user selected from the dropdown menu 
+    $('#Jan').on('click', (function(){switchMonth("Jan");}));
+    $('#Feb').on('click', (function(){switchMonth("Feb");}));
+    $('#Mar').on('click', (function(){switchMonth("Mar");}));
+    $('#Apr').on('click', (function(){switchMonth("Apr");}));
+    $('#May').on('click', (function(){switchMonth("May");}));
+    $('#Jun').on('click', (function(){switchMonth("Jun");}));
+    $('#Jul').on('click', (function(){switchMonth("Jul");}));
+    $('#Aug').on('click', (function(){switchMonth("Aug");}));
+    $('#Sep').on('click', (function(){switchMonth("Sep");}));
+    $('#Oct').on('click', (function(){switchMonth("Oct");}));
+    $('#Nov').on('click', (function(){switchMonth("Nov");}));
+    $('#Dec').on('click', (function(){switchMonth("Dec");})); 
+}
+

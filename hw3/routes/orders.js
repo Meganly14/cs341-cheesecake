@@ -1,30 +1,37 @@
 var express = require('express');
 var router = express.Router();
-var data = {"error": null, "data": [{"topping": "cherry", "quantity":2}, {"topping": "plain", "quantity":6}, {"topping": "chocolate", "quantity":3}]};
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json(json);
+var arr = [];
+
+//create new object for cherry
+var object1 = new Object();
+object1.topping = 'Cherry';
+object1.quant = '3';
+arr.push(object1);
+
+//create new object for plain
+var object2 = new Object();
+object2.topping = 'Plain';
+object2.quant = '6';
+arr.push(object2);
+
+//create new object for chocolate
+var object3 = new Object();
+object3.topping = 'Chocolate';
+object3.quant = '2';
+arr.push(object3);
+
+//convert array into string form for JSON
+var string = JSON.stringify(arr);
+console.log(string);
+
+//convert the string into a valid JSON object 
+var data = JSON.parse(string);
+console.log(data);
+
+//POST
+router.post('/', function(req, res, next){
+  res.send({'data':data});
 });
-
-/*gets post*/
-router.post('/', async function(req, res, next){
-  var month = req.body.month.toUpperCase();
-  var plain = await quantity("plain", month);
-  if(plain == null){
-    plain = 0;
-  }
-  var cherry = await quanitity("cherry", month);
-  if(cherry == null){
-    cherry = 0;
-  }
-  var chocoloate = await quanitity ("chocolate", month);
-  if(chocolate == null){
-    chocolate = 0;
-  }
-  var pastOrders = [{"topping":"cherry", "quantity":cherry},{"topping":"chocolate", "quantity":chocolate},{"topping":"plain", "quantity":plain}];
-  var order_json = JSON.stringify(pastOrders);
-  res.send(order_json);
-})
 
 module.exports = router;
